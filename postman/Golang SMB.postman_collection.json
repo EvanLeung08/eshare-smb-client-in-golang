@@ -115,16 +115,16 @@
 		{
 			"name": "SMB Delete",
 			"request": {
-				"method": "GET",
+				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/search?basePath=test&pattern=.*",
+					"raw": "localhost:8080/delete?basePath=test&remotePattern=.*$",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"search"
+						"delete"
 					],
 					"query": [
 						{
@@ -132,8 +132,8 @@
 							"value": "test"
 						},
 						{
-							"key": "pattern",
-							"value": ".*"
+							"key": "remotePattern",
+							"value": ".*$"
 						}
 					]
 				}
