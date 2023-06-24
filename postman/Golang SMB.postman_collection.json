@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "36de927e-a4bc-4e59-9412-78cd44303177",
+		"name": "Golang SMB",
+		"description": "GOlang SMB operation demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3479700"
+	},
+	"item": [
+		{
+			"name": "SMB Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "localPath",
+							"value": "/Users/evan/Downloads/downloaded_file.txt",
+							"type": "text"
+						},
+						{
+							"key": "remotePath",
+							"value": "test/downloaded_file.txt",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"upload"
+					],
+					"query": [
+						{
+							"key": "localPath",
+							"value": "/Users/evan/Downloads/downloaded_file.txt",
+							"disabled": true
+						},
+						{
+							"key": "remotePath",
+							"value": "test/downloaded_file.txt",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SMB Download",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/download?basePath=test/&remotePattern=.*$&localPath=/Users/evan/Downloads/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"download"
+					],
+					"query": [
+						{
+							"key": "basePath",
+							"value": "test/"
+						},
+						{
+							"key": "remotePattern",
+							"value": ".*$"
+						},
+						{
+							"key": "localPath",
+							"value": "/Users/evan/Downloads/"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SMB Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/search?basePath=test&pattern=.*",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "basePath",
+							"value": "test"
+						},
+						{
+							"key": "pattern",
+							"value": ".*"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SMB Delete",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/search?basePath=test&pattern=.*",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "basePath",
+							"value": "test"
+						},
+						{
+							"key": "pattern",
+							"value": ".*"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SMB Rename",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/rename?basePath=test/&oldPattern=.*$&suffix=.d2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rename"
+					],
+					"query": [
+						{
+							"key": "basePath",
+							"value": "test/"
+						},
+						{
+							"key": "oldPattern",
+							"value": ".*$"
+						},
+						{
+							"key": "suffix",
+							"value": ".d2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
